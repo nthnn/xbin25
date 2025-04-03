@@ -27,18 +27,18 @@ import (
 	"time"
 )
 
-// `loadCertificate` loads and verifies an X.509 certificate from a PEM file,
+// loadCertificate loads and verifies an X.509 certificate from a PEM file,
 // extracting the RSA public key.
 //
 // The function performs validation of the certificate against system roots
 // or a new certificate pool if system roots are unavailable.
 //
 // Parameters:
-//   - `pemFile`: Path to a PEM-encoded X.509 certificate file
+//   - pemFile: Path to a PEM-encoded X.509 certificate file
 //
 // Returns:
-//   - `*rsa.PublicKey`: The RSA public key from the certificate
-//   - `error`: An error if loading or validation fails
+//   - *rsa.PublicKey: The RSA public key from the certificate
+//   - error: An error if loading or validation fails
 func loadCertificate(pemFile string) (*rsa.PublicKey, error) {
 	pemBytes, err := os.ReadFile(pemFile)
 	if err != nil {
@@ -79,15 +79,15 @@ func loadCertificate(pemFile string) (*rsa.PublicKey, error) {
 	return pubKey, nil
 }
 
-// `loadPrivateKey` loads an RSA private key from a PEM file,
+// loadPrivateKey loads an RSA private key from a PEM file,
 // supporting both PKCS#1 and PKCS#8 formats.
 //
 // Parameters:
-//   - `keyFile`: Path to a PEM-encoded private key file
+//   - keyFile: Path to a PEM-encoded private key file
 //
 // Returns:
-//   - `*rsa.PrivateKey`: The RSA private key
-//   - `error`: An error if loading fails
+//   - *rsa.PrivateKey: The RSA private key
+//   - error: An error if loading fails
 func loadPrivateKey(keyFile string) (*rsa.PrivateKey, error) {
 	keyBytes, err := os.ReadFile(keyFile)
 	if err != nil {

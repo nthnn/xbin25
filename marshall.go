@@ -46,11 +46,11 @@ import (
 //  7. Final compression with parallel gzip
 //
 // Parameters:
-//   - `data`: Any Go value that can be serialized by MessagePack
+//   - data: Any Go value that can be serialized by MessagePack
 //
 // Returns:
-//   - `[]byte`: The marshalled, encrypted, signed, and compressed data
-//   - `error`: An error if any step in the process fails
+//   - []byte: The marshalled, encrypted, signed, and compressed data
+//   - error: An error if any step in the process fails
 func (config *XBin25Config) Marshall(data interface{}) ([]byte, error) {
 	pubKey, err := loadCertificate(config.EncryptCertFile)
 	if err != nil {

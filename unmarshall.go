@@ -49,11 +49,11 @@ import (
 //  8. MessagePack deserialization of the plaintext
 //
 // Parameters:
-//   - `data`: Binary data previously produced by Marshall
+//   - data: Binary data previously produced by Marshall
 //
 // Returns:
-//   - `interface{}`: The unmarshalled Go value
-//   - `error`: An error if any step in the process fails
+//   - interface{}: The unmarshalled Go value
+//   - error: An error if any step in the process fails
 func (config *XBin25Config) Unmarshall(data []byte) (interface{}, error) {
 	pubKey, err := loadCertificate(config.SignCertFile)
 	if err != nil {
