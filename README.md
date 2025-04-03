@@ -1,4 +1,11 @@
-# XBin25 - Secure Data Serialization for Go
+<p align="center">
+    <img src="assets/xbin25-logo.png" width="220" />
+</p>
+
+<p align="center">
+    <small>Secure Data Serialization for Go</small>
+</p>
+<h1 align="center">XBin25</h1>
 
 ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
 
